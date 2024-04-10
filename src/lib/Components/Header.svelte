@@ -20,9 +20,8 @@
    }
    .left_side{
     display: block;
-    align-items: center; 
     gap: 0.2vw;
-    margin-left: 5vw;
+    margin-left: 1vw;
    } 
    .right_side{
     display: flex;
@@ -45,7 +44,7 @@
 <div class='header'>
     <div class='left_side'>
         <img src={yandexLogo} class="yandexLogo" alt="YandexLogo" width="38px" height="38px"/>
-        <img src={museumLogo} class="museumLogo" alt="YandexMuseumLogo" width="100px" height="35px"/>
+        <img src={museumLogo} class="museumLogo" alt="YandexMuseumLogo" width="110px" style="margin-top: 2px;" />
     </div>
     <div class='right_side'>
         <span>Сделано</span>
