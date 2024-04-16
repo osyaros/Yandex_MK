@@ -1,5 +1,5 @@
 <script>
-    import home from '../../static/home-circle.svg'
+    import home from '../../static/home.svg'
     import sport from '../../static/sport.svg'
     import study from '../../static/study.svg'
 
@@ -25,7 +25,10 @@
         background-color: #1C1C1C;
         height: 100vh;
         width: 10vw;
+        min-width: 80px;
         font-family: "Montserrat", sans-serif;
+        max-width: 10vw; /* Limit the width to prevent overflow */
+        overflow-x: hidden; /* Hide horizontal overflow */
         
     }
 
@@ -50,6 +53,17 @@
     img {
         width: 40px;
     }
+    @media only screen and (min-width: 700px) and (max-width:1060px) {
+        span{
+            font-size: 1.6vw;
+        }
+    }
+    @media only screen and (min-width: 250px) and (max-width:700px) {
+        span{
+            display: none   ;
+        }
+        
+}
 </style>
 
 <div class="categorybar">
