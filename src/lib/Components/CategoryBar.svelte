@@ -22,28 +22,33 @@
     .categorybar {
         display: flex;
         flex-direction: column;
-        background-color: #1C1C1C;
+        /* background-color: #1C1C1C; */
         height: 100vh;
-        width: 10vw;
+        width: 18vw;
         min-width: 80px;
         font-family: "Montserrat", sans-serif;
         max-width: 10vw; /* Limit the width to prevent overflow */
         overflow-x: hidden; /* Hide horizontal overflow */
+        gap: 4vh;
         
     }
 
     .category {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: end;
         align-items: center;
-        width: 100%;
-        height: 100px;
+        width: 10vw;
+        height: 50px;
         cursor: pointer;
         transition: background-color 0.4s;
         font-weight: 500;
         font-size:18px;
         border:none;
+        border-radius: 0 50px 50px 0;
+        gap:3px;
+        padding-right: 1vw;
+        transition: width ease-in-out 0.8s;;
     }
     .category:hover{
         color:#1d69fc;
@@ -51,7 +56,8 @@
         border: none;
     }
     img {
-        width: 40px;
+        width: 2vw;
+        min-width: 2vw;
     }
     @media only screen and (min-width: 700px) and (max-width:1060px) {
         span{
@@ -60,7 +66,7 @@
     }
     @media only screen and (min-width: 250px) and (max-width:700px) {
         span{
-            display: none   ;
+            display: none;
         }
         
 }
@@ -68,11 +74,15 @@
 
 <div class="categorybar">
     {#each categories as category, index}
-        <button class="category" style="background-color: {category.selected ? 'grey' : 'transparent'}; border:none;" on:click={() => selectCategory(index)}>
+        <button class="category" style="background-color: {category.selected ? '#439C8C' : 'grey'}; width:{category.selected ? '100%':'7vw'}" on:click={() => selectCategory(index)}>
             {#if category.image}
-                <img src={category.image} alt="CategoryImage"/>
+                <span style="display:{category.selected ? '':'none'}">{category.name}</span>
+                <img src={category.image} alt="CategoryImage" />
+            {:else}
+                <span>{category.name}</span>
             {/if}
-            <span>{category.name}</span>
+            
+            
         </button>
     {/each}
 </div>
