@@ -7,6 +7,8 @@
         { title: 'Название 2', date: "11.11.11", type:"home"},
         { title: 'Название 3', date: "3.1.15", type:"sport"}
     ];
+
+    import LocalStorage from './store/store.svelte';
 </script>
 
 <main>
@@ -17,6 +19,8 @@
       {#each cards as card}
         <Card card = {card}/>
       {/each}
+
+      <LocalStorage />
       
     </div>
   </div>
