@@ -30,7 +30,7 @@
         max-width: 10vw; /* Limit the width to prevent overflow */
         overflow-x: hidden; /* Hide horizontal overflow */
         gap: 4vh;
-        
+        padding-top:  2.5vh;
     }
 
     .category {
@@ -41,14 +41,15 @@
         width: 10vw;
         height: 50px;
         cursor: pointer;
+        -webkit-transition: background-color 0.4s;
         transition: background-color 0.4s;
         font-weight: 500;
         font-size:18px;
-        border:none;
         border-radius: 0 50px 50px 0;
         gap:3px;
         padding-right: 1vw;
-        transition: width ease-in-out 0.8s;;
+        -webkit-transform: width ease-in-out 0.8s;
+        transition: width ease-in-out 0.8s;
     }
     .category:hover{
         color:#1d69fc;
@@ -74,14 +75,13 @@
 
 <div class="categorybar">
     {#each categories as category, index}
-        <button class="category" style="background-color: {category.selected ? '#439C8C' : 'grey'}; width:{category.selected ? '100%':'7vw'}" on:click={() => selectCategory(index)}>
+        <button class="category" style="background-color: {category.selected ? '#559D49' : 'grey'}; width:{category.selected ? '100%':'7vw'}" on:click={() => selectCategory(index)}>
             {#if category.image}
                 <span style="display:{category.selected ? '':'none'}">{category.name}</span>
                 <img src={category.image} alt="CategoryImage" />
             {:else}
                 <span>{category.name}</span>
             {/if}
-            
             
         </button>
     {/each}

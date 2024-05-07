@@ -37,7 +37,7 @@
   }
   .cards_place{
     padding-left: 50px;
-    padding-top: 50px;
+    padding-top:  2.5vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

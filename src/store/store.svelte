@@ -2,7 +2,7 @@
  import { onMount } from 'svelte';
 
  let items = [];
- let newItem = { name: '', description: '' };
+ let newItem = { name: '', description: '', category:''};
 
  // Функция для получения данных из localStorage при монтировании компонента
  onMount(() => {
@@ -16,7 +16,7 @@
  function addItem() {
     items = [...items, newItem];
     localStorage.setItem('items', JSON.stringify(items));
-    newItem = { name: '', description: '' };
+    newItem = { name: '', description: '', category:''};
  }
 
  // Функция для удаления элемента по индексу
