@@ -48,11 +48,10 @@
         border-radius: 0 50px 50px 0;
         gap:3px;
         padding-right: 1vw;
-        -webkit-transform: width ease-in-out 0.8s;
-        transition: width ease-in-out 0.8s;
+        -webkit-transition: width ease-in-out 0.8s;
+        transition: ease-in-out 0.8s;
     }
     .category:hover{
-        color:#1d69fc;
         transition: 0.15s;
         border: none;
     }

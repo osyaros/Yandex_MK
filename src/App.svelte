@@ -2,6 +2,7 @@
   import Card from './lib/Components/Card.svelte';
   import CategoryBar from './lib/Components/CategoryBar.svelte';
   import Header from './lib/Components/Header.svelte';
+  import DetailPage from './lib/Pages/DetailPage.svelte';
   let cards = [
         { title: 'Название 1', date: "22.04.23",type:"study"},
         { title: 'Название 2', date: "11.11.11", type:"home"},
@@ -15,12 +16,13 @@
   <Header />
   <div class="main_block">
     <CategoryBar />
+    <DetailPage />
     <div class="cards_place">
-      {#each cards as card}
+      <!-- {#each cards as card}
         <Card card = {card}/>
-      {/each}
-
-      <LocalStorage />
+      {/each} -->
+      
+      <!-- <LocalStorage /> -->
       
     </div>
   </div>
