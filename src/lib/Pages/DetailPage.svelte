@@ -1,6 +1,19 @@
 <script>
     import back from '../../static/back.svg'
     import StatusButton from '../UI/StatusButton.svelte';
+    import LocalStorage from "../../store/store.svelte"
+    import { onMount } from 'svelte';
+
+    let items = [];
+    let newItem = { name: '', date_to: '', date_from:'', status:"", goal:"", tasks:[]};
+
+    // Функция для получения данных из localStorage при монтировании компонента
+    onMount(() => {
+    const storedItems = localStorage.getItem('items');
+    if (storedItems) {
+        items = JSON.parse(storedItems);
+    }
+    });
 
     let data = {
         name: "Домашняя работа №1",
@@ -13,6 +26,8 @@
             {name: "2 task", completed: false}
         ]
     }
+
+    
 
     let status_color;
     function calculateStatus() {
@@ -103,6 +118,7 @@
         <img src={back} alt="back_button" />
         <StatusButton status={data.status} status_color={status_color} />
     </div>
+
     <div class="description">
         <div class="name">
             <h1>

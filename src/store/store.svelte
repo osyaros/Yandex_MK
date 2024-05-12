@@ -2,7 +2,7 @@
  import { onMount } from 'svelte';
 
  let items = [];
- let newItem = { name: '', description: '', category:''};
+ let newItem = { name: '', date_to: '', date_from:'', status:"", goal:"", tasks:[]};
 
  // Функция для получения данных из localStorage при монтировании компонента
  onMount(() => {
@@ -16,7 +16,7 @@
  function addItem() {
     items = [...items, newItem];
     localStorage.setItem('items', JSON.stringify(items));
-    newItem = { name: '', description: '', category:''};
+    newItem = { name: '', date_to: '', date_from:'', status:"", goal:"", tasks:[]};
  }
 
  // Функция для удаления элемента по индексу
@@ -44,3 +44,13 @@
     {/each}
  </ul>
 </div>
+
+<!-- let data = {
+    name: "Домашняя работа №1",
+    date_to: "10.11.2012",
+    date_from:"11.05.2025",
+    status: "Выполнено",
+    goal: "Написать доклад по истории ",
+    tasks: ["1 task", "2 task"],
+    }
+    -->
