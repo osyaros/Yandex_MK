@@ -4,17 +4,6 @@
     import LocalStorage from "../../store/store.svelte"
     import { onMount } from 'svelte';
 
-    let items = [];
-    let newItem = { name: '', date_to: '', date_from:'', status:"", goal:"", tasks:[]};
-
-    // Функция для получения данных из localStorage при монтировании компонента
-    onMount(() => {
-    const storedItems = localStorage.getItem('items');
-    if (storedItems) {
-        items = JSON.parse(storedItems);
-    }
-    });
-
     let data = {
         name: "Домашняя работа №1",
         date_to: "10.11.2012",
@@ -27,7 +16,23 @@
         ]
     }
 
-    
+      // Функция для сохранения данных в localStorage
+    function saveData() {
+        localStorage.setItem('myData', JSON.stringify(data));
+    }
+        
+      // Функция для загрузки данных из localStorage
+    function loadData() {
+        const storedData = localStorage.getItem('myData');
+        if (storedData) {
+        data = JSON.parse(storedData);
+        }
+    }
+
+      // Вызов функции loadData при монтировании компонента
+    onMount(() => {
+        loadData();
+    });
 
     let status_color;
     function calculateStatus() {
